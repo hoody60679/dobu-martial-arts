@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DoBu Martial Arts – Professional martial arts training in Solihull. Classes for all ages and abilities. Join today.">
+<title>DoBu Martial Arts – Solihull</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS VARIABLES ===== */
+  :root {
+    --red: #D4CFC8;
+    --red-dark: #B8B2AA;
+    --black: #0C0C0C;
+    --charcoal: #141414;
+    --dark-grey: #1C1C1C;
+    --mid-grey: #555;
+    --light-grey: #F0EDE8;
+    --white: #E8E4DD;
+    --gold: #777;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --nav-height: 70px;
+    --transition: 0.3s ease;
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-height);
+    background: rgba(13,13,13,0.97);
+    border-bottom: 1px solid #1E1E1E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--white);
+    letter-spacing: 3px;
+  }
+  .nav-logo span { color: #777; }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bbb;
+    transition: color var(--transition);
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--white);
+    border-bottom-color: rgba(255,255,255,0.4);
+  }
+  .nav-cta {
+    background: transparent !important;
+    color: var(--white) !important;
+    padding: 8px 20px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all var(--transition) !important;
+  }
+  .nav-cta:hover { border-color: rgba(255,255,255,0.5) !important; background: rgba(255,255,255,0.05) !important; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--white);
+    transition: var(--transition);
+  }
+
+  /* ===== PAGES ===== */
+  .page { display: none; padding-top: var(--nav-height); min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.01) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-diagonal {
+    position: absolute;
+    right: -5%;
+    top: 0;
+    bottom: 0;
+    width: 55%;
+    background: var(--charcoal);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.6;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 5%;
+    animation: fadeUp 0.9s ease forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 1.2rem;
+    padding: 4px 14px;
+    border: 1px solid #2A2A2A;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: rgba(255,255,255,0.4);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 540px;
+    margin: 1.5rem auto 2.5rem;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 36px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .btn-primary:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 36px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #666; margin-top: 4px; }
+
+  /* ===== SECTION STYLES ===== */
+  section { padding: 90px 5%; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    color: var(--white);
+  }
+  .section-title span { color: rgba(255,255,255,0.45); }
+  .section-intro {
+    color: #888;
+    max-width: 580px;
+    margin-top: 1rem;
+    font-weight: 300;
+    font-size: 0.95rem;
+  }
+  .section-header { margin-bottom: 3.5rem; }
+  .dark-section { background: var(--charcoal); }
+  .light-section { background: var(--light-grey); color: var(--black); }
+  .light-section .section-title { color: var(--black); }
+  .light-section .section-label { color: #888; }
+  .light-section .section-intro { color: var(--mid-grey); }
+
+  /* ===== DISCIPLINES GRID ===== */
+  .disciplines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+  }
+  .discipline-card {
+    background: var(--dark-grey);
+    padding: 2.5rem 2rem;
+    border-top: 1px solid #2A2A2A;
+    transition: transform var(--transition), background var(--transition);
+    cursor: pointer;
+  }
+  .discipline-card:hover { background: #2f2f2f; transform: translateY(-4px); }
+  .discipline-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .discipline-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .discipline-card p { font-size: 0.85rem; color: #888; line-height: 1.6; }
+
+  /* ===== TIMETABLE ===== */
+  .timetable-wrapper { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 700px;
+  }
+  thead tr { background: #1A1A1A; border-bottom: 1px solid #333; }
+  th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--white);
+  }
+  td {
+    padding: 13px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #ccc;
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+  tr:hover td { background: rgba(255,255,255,0.01); color: var(--white); }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .badge-beginner { background: rgba(255,255,255,0.05); color: #888; }
+  .badge-intermediate { background: rgba(255,255,255,0.05); color: #aaa; }
+  .badge-advanced { background: rgba(255,255,255,0.05); color: #999; }
+  .badge-all { background: rgba(255,255,255,0.05); color: #777; }
+
+  /* ===== MEMBERSHIP CARDS ===== */
+  .membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .mem-card {
+    background: var(--dark-grey);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .mem-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+  .mem-card.featured {
+    background: #242424;
+    border-color: rgba(255,255,255,0.2);
+  }
+  .mem-card.featured .mem-price-num,
+  .mem-card.featured .mem-features li,
+  .mem-card.featured .mem-tier,
+  .mem-card.featured p { color: rgba(255,255,255,0.85); }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2A2A2A;
+    color: #888;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+  }
+  .mem-tier {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.3rem;
+    color: var(--white);
+  }
+  .mem-price {
+    margin: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 1.2rem 0;
+  }
+  .mem-price-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--white);
+    line-height: 1;
+  }
+  .mem-price-num sup { font-size: 1.4rem; vertical-align: super; }
+  .mem-price-period { font-size: 0.75rem; color: #999; margin-top: 4px; }
+  .mem-features { flex: 1; }
+  .mem-features li {
+    font-size: 0.85rem;
+    color: #aaa;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mem-features li::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: #555;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .mem-card.featured .mem-features li::before { background: #666; }
+  .mem-btn {
+    display: block;
+    text-align: center;
+    margin-top: 1.8rem;
+    padding: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    background: transparent;
+  }
+  .mem-btn:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+  .mem-card.featured .mem-btn {
+    border-color: rgba(255,255,255,0.3);
+    background: transparent;
+    color: var(--white);
+  }
+  .mem-card.featured .mem-btn:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.6); }
+
+  /* ===== INSTRUCTORS ===== */
+  .instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .instructor-card {
+    background: var(--dark-grey);
+    overflow: hidden;
+    border-bottom: 3px solid transparent;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .instructor-card:hover { border-bottom-color: rgba(255,255,255,0.4); transform: translateY(-4px); }
+  .instructor-photo {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .instructor-photo-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    opacity: 0.07;
+    filter: grayscale(1);
+  }
+  .instructor-info { padding: 1.8rem; }
+  .instructor-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+  .instructor-title {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.8rem;
+  }
+  .instructor-bio { font-size: 0.85rem; color: #888; line-height: 1.6; margin-bottom: 1rem; }
+  .instructor-belts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .belt {
+    display: inline-block;
+    width: 32px; height: 8px;
+    border-radius: 1px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info-block { display: flex; flex-direction: column; gap: 2rem; }
+  .contact-detail { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .contact-icon {
+    width: 42px; height: 42px;
+    background: #1A1A1A;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .contact-text h4 {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  .contact-text p { font-size: 0.9rem; color: #ccc; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark-grey);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--white);
+    padding: 12px 14px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: #444; }
+  .form-group select option { background: var(--dark-grey); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-error { display: none; font-size: 0.75rem; color: #e8666b; margin-top: 2px; }
+  .form-success {
+    display: none;
+    background: rgba(100,200,100,0.1);
+    border: 1px solid rgba(100,200,100,0.3);
+    padding: 1rem;
+    color: #7ecb7e;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* ===== PAGE HERO (inner pages) ===== */
+  .page-hero {
+    background: var(--charcoal);
+    padding: 60px 5% 50px;
+    border-bottom: 1px solid #1E1E1E;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    right: -5%;
+    top: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+  }
+  .page-hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  .page-hero p {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    max-width: 600px;
+  }
+  .breadcrumb {
+    font-size: 0.7rem;
+    color: #555;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb span { color: #888; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #080808;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #1E1E1E;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .footer-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+  .footer-brand .footer-logo span { color: #888; }
+  .footer-brand p { font-size: 0.85rem; color: #666; line-height: 1.7; }
+  .footer-social { display: flex; gap: 10px; margin-top: 1.2rem; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    color: #888;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .social-btn:hover { border-color: #555; color: #ccc; }
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a {
+    font-size: 0.85rem;
+    color: #666;
+    transition: color var(--transition);
+    cursor: pointer;
+  }
+  .footer-col ul li a:hover { color: #888; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  /* ===== ABOUT PAGE ===== */
+  .about-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+  .about-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  .about-text p { color: #999; margin-bottom: 1rem; font-size: 0.95rem; }
+  .about-visual {
+    background: var(--dark-grey);
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    border-left: 1px solid #2A2A2A;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual::after {
+    content: 'SINCE 2009';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: #888;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .value-card {
+    background: var(--dark-grey);
+    padding: 2rem;
+    border-left: 1px solid #2A2A2A;
+  }
+  .value-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .value-card h3 { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .value-card p { font-size: 0.8rem; color: #777; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: rgba(13,13,13,0.98);
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid #1E1E1E;
+    }
+    .contact-layout { grid-template-columns: 1fr; }
+    .about-intro { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 2rem; }
+    .hero-diagonal { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; }
+    .membership-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== UTILITY ===== */
+  .divider {
+    width: 50px;
+    height: 3px;
+    background: #2A2A2A;
+    margin: 1rem 0 2rem;
+  }
+  .text-center { text-align: center; }
+  .text-center .section-intro { margin-left: auto; margin-right: auto; }
+  .text-center .divider { margin-left: auto; margin-right: auto; }
+  .red { color: rgba(255,255,255,0.45); }
+  .gold { color: var(--gold); }
+  .mt-2 { margin-top: 2rem; }
+  .highlight-box {
+    background: rgba(255,255,255,0.01);
+    border-left: 1px solid #2A2A2A;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">DO<span>BU</span></div>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="#" onclick="showPage('home')" class="active" role="menuitem">Home</a></li>
+    <li role="none"><a href="#" onclick="showPage('about')" role="menuitem">About</a></li>
+    <li role="none"><a href="#" onclick="showPage('classes')" role="menuitem">Classes</a></li>
+    <li role="none"><a href="#" onclick="showPage('membership')" role="menuitem">Membership</a></li>
+    <li role="none"><a href="#" onclick="showPage('contact')" class="nav-cta" role="menuitem">Join Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== HOME PAGE ========== -->
+<main id="home" class="page active" role="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-diagonal" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Solihull's Premier Martial Arts Club</div>
+      <h1>Train.<em>Discipline.</em>Evolve.</h1>
+      <p class="hero-sub">Professional instruction in Brazilian Jiu-Jitsu, Muay Thai, Judo and MMA. All ages. All abilities. One community.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('membership')">Start Your Journey</button>
+        <button class="btn-outline" onclick="showPage('classes')">View Classes</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Active Members</div>
+        </div>
+        <div>
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years Training</div>
+        </div>
+        <div>
+          <div class="stat-num">6</div>
+          <div class="stat-label">Expert Instructors</div>
+        </div>
+        <div>
+          <div class="stat-num">4</div>
+          <div class="stat-label">Disciplines</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disciplines -->
+  <section style="padding: 80px 5%; background: var(--black);" aria-labelledby="disciplines-heading">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title" id="disciplines-heading">Our <span>Disciplines</span></h2>
+      <p class="section-intro">From beginner-friendly introductions to elite competition training — we have a class for every level.</p>
+    </div>
+    <div class="disciplines-grid">
+      <div class="discipline-card" onclick="showPage('classes')" aria-label="Learn about Brazilian Jiu-Jitsu">
+        <div class="discipline-icon" aria-hidden="true">🥋</div>
+        <h3>Brazilian Jiu-Jitsu</h3>
+        <p>Ground-based grappling and submission art. Develop technique, leverage and strategic thinking on the mat.</p>
+      </div>
+      <div class="discipline-card" onclick="showPage('classes')" aria-label="Learn about Muay Thai">
+        <div class="discipline-icon" aria-hidden="true">🥊</div>
+        <h3>Muay Thai</h3>
+        <p>The art of eight limbs. Striking, clinch work and powerful kicks developed under expert Muay Thai coaches.</p>
+      </div>
+      <div class="discipline-card" onclick="showPage('classes')" aria-label="Learn about Judo">
+        <div class="discipline-icon" aria-hidden="true">⚡</div>
+        <h3>Judo</h3>
+        <p>Olympic throwing and grappling art. Build explosive power, timing and competitive discipline.</p>
+      </div>
+      <div class="discipline-card" onclick="showPage('classes')" aria-label="Learn about MMA">
+        <div class="discipline-icon" aria-hidden="true">🔥</div>
+        <h3>Mixed Martial Arts</h3>
+        <p>Combine striking and grappling into a complete fighting system. From fundamentals to cage-ready conditioning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section style="background: #161616; padding: 60px 5%; text-align: center; border-top: 1px solid #222; border-bottom: 1px solid #222;" aria-label="Call to action">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: 3px; margin-bottom: 1rem;">READY TO BEGIN?</h2>
+    <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 0.95rem;">Your first two weeks are free. No contracts. No pressure. Just training.</p>
+    <button class="btn-outline" onclick="showPage('contact')">Claim Your Free Trial</button>
+  </section>
+
+  <!-- Featured Instructors -->
+  <section style="background: var(--charcoal); padding: 80px 5%;" aria-labelledby="instructors-heading">
+    <div class="section-header">
+      <span class="section-label">The Team</span>
+      <h2 class="section-title" id="instructors-heading">Meet Your <span>Coaches</span></h2>
+      <p class="section-intro">Our instructors bring decades of competitive and coaching experience across the world's top martial arts disciplines.</p>
+    </div>
+    <div class="instructors-grid">
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background: var(--dark-grey);" aria-label="Head Coach Damian Burke">
+          <div class="instructor-photo-bg" aria-hidden="true">🥋</div>
+          <span style="position:relative;z-index:1;font-size:4rem;" aria-hidden="true">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Damian Burke</h3>
+          <div class="instructor-title">Head Coach & Founder – BJJ & MMA</div>
+          <p class="instructor-bio">3rd Degree Black Belt in BJJ. 20+ years in martial arts. Former national competitor and IBJJF medalist. Damian founded DoBu in 2009 with a vision to bring world-class martial arts to the Midlands.</p>
+          <div class="instructor-belts" aria-label="Belt rank indicators">
+            <div class="belt" style="background:#000;" title="Black Belt"></div>
+            <div class="belt" style="background:#333;" title="Stripe"></div>
+            <div class="belt" style="background:#333;" title="Stripe"></div>
+            <div class="belt" style="background:#333;" title="Stripe"></div>
+          </div>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background: var(--dark-grey);" aria-label="Muay Thai Coach Sofia Patel">
+          <div class="instructor-photo-bg" aria-hidden="true">🥊</div>
+          <span style="position:relative;z-index:1;font-size:4rem;" aria-hidden="true">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Sofia Patel</h3>
+          <div class="instructor-title">Head Muay Thai Coach</div>
+          <p class="instructor-bio">3x WBC Muay Thai UK Champion. Trained in Chiang Mai, Thailand under Kru Chatchai. Sofia brings authentic Muay Thai methodology and a passion for developing fighters of all levels.</p>
+          <div class="instructor-belts" aria-label="Rank indicators">
+            <div class="belt" style="background:var(--gold);" title="Gold"></div>
+            <div class="belt" style="background:var(--gold);" title="Gold"></div>
+            <div class="belt" style="background:var(--gold);" title="Gold"></div>
+          </div>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background: var(--dark-grey);" aria-label="Judo Coach Marcus Webb">
+          <div class="instructor-photo-bg" aria-hidden="true">⚡</div>
+          <span style="position:relative;z-index:1;font-size:4rem;" aria-hidden="true">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Marcus Webb</h3>
+          <div class="instructor-title">Head Judo Coach – 3rd Dan</div>
+          <p class="instructor-bio">British Judo Association Level 3 Coach. Former British Universities champion. Marcus leads all Judo classes and oversees the junior development programme at DoBu.</p>
+          <div class="instructor-belts" aria-label="Belt rank indicators">
+            <div class="belt" style="background:#000;" title="Black Belt"></div>
+            <div class="belt" style="background:#000;" title="Black Belt"></div>
+            <div class="belt" style="background:#000;" title="Black Belt"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top: 3rem;">
+      <button class="btn-outline" onclick="showPage('about')">Meet the Full Team</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">DO<span>BU</span></div>
+        <p>Solihull's premier martial arts training centre. Professional coaching in BJJ, Muay Thai, Judo and MMA for all ages and abilities since 2009.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+          <a href="#" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('classes')">Classes</a></li>
+          <li><a onclick="showPage('membership')">Membership</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <ul>
+          <li><a>Brazilian Jiu-Jitsu</a></li>
+          <li><a>Muay Thai</a></li>
+          <li><a>Judo</a></li>
+          <li><a>MMA</a></li>
+          <li><a>Juniors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a>12 Station Road, Solihull B91 3GH</a></li>
+          <li><a>info@dobumartialarts.co.uk</a></li>
+          <li><a>0121 456 7890</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DoBu Martial Arts. All rights reserved.</p>
+      <p>Solihull, West Midlands, UK</p>
+    </div>
+  </footer>
+</main>
+
+<!-- ========== ABOUT PAGE ========== -->
+<div id="about" class="page" role="main" aria-label="About DoBu Martial Arts">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &rsaquo; <span>About Us</span></div>
+    <span class="page-hero-label">Our Story</span>
+    <h1>About <span class="red">DoBu</span></h1>
+    <p>Founded in 2009, DoBu Martial Arts has grown from a small community club into one of the Midlands' most respected martial arts training centres.</p>
+  </div>
+
+  <section style="background: var(--black); padding: 80px 5%;">
+    <div class="about-intro">
+      <div class="about-text">
+        <span class="section-label">Who We Are</span>
+        <h2>Built on <span class="red">Discipline,</span><br>Driven by Community</h2>
+        <div class="divider"></div>
+        <p>DoBu Martial Arts was founded by Damian Burke in 2009 with a simple mission: to provide accessible, world-class martial arts training to people of all backgrounds, ages and abilities in the Solihull area.</p>
+        <p>What started as a 20-person BJJ class in a rented sports hall has grown into a 500-member training community offering four disciplines, six qualified coaches, and a purpose-built 4,000 sq ft training facility.</p>
+        <p>We believe martial arts training builds more than just physical fitness. The discipline, resilience and community developed on the mat carry into every aspect of life.</p>
+        <button class="btn-primary mt-2" onclick="showPage('contact')">Train With Us</button>
+      </div>
+      <div class="about-visual" aria-label="DoBu training facility illustration">
+        <span aria-hidden="true">🥋</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" aria-labelledby="values-heading">
+    <span class="section-label">Our Principles</span>
+    <h2 class="section-title" id="values-heading">The DoBu <span>Values</span></h2>
+    <div class="divider"></div>
+    <div class="values-grid" style="margin-top:2.5rem;">
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">01</div>
+        <h3>Respect</h3>
+        <p>Every student, every instructor. On and off the mat, respect is the foundation of our culture.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">02</div>
+        <h3>Discipline</h3>
+        <p>Consistent training, consistent growth. We encourage every member to show up and push forward.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">03</div>
+        <h3>Community</h3>
+        <p>We are a family. Training partners who push each other to be better inside and outside the gym.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">04</div>
+        <h3>Excellence</h3>
+        <p>World-class instruction in every class. We hold our coaches and our curriculum to the highest standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--black); padding: 80px 5%;" aria-labelledby="full-team-heading">
+    <div class="section-header">
+      <span class="section-label">The Team</span>
+      <h2 class="section-title" id="full-team-heading">All <span>Instructors</span></h2>
+    </div>
+    <div class="instructors-grid">
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="Head Coach Damian Burke">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Damian Burke</h3>
+          <div class="instructor-title">Head Coach & Founder – BJJ & MMA</div>
+          <p class="instructor-bio">3rd Degree BJJ Black Belt. IBJJF medalist. 20+ years experience. Founded DoBu in 2009.</p>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="Muay Thai Coach Sofia Patel">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Sofia Patel</h3>
+          <div class="instructor-title">Head Muay Thai Coach</div>
+          <p class="instructor-bio">3x WBC Muay Thai UK Champion. Trained in Thailand under Kru Chatchai.</p>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="Judo Coach Marcus Webb">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Marcus Webb</h3>
+          <div class="instructor-title">Head Judo Coach – 3rd Dan</div>
+          <p class="instructor-bio">BJA Level 3 Coach. Former British Universities Judo Champion.</p>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="MMA Coach Ryan Okafor">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Ryan Okafor</h3>
+          <div class="instructor-title">MMA & Strength and Conditioning Coach</div>
+          <p class="instructor-bio">Pro MMA record 12-4. Strength & conditioning specialist. Heads the advanced and competition prep programme.</p>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="Junior Coach Hannah Mills">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Hannah Mills</h3>
+          <div class="instructor-title">Junior Programme Coordinator</div>
+          <p class="instructor-bio">Specialist in youth martial arts. DBS checked. Oversees all classes for ages 5–16.</p>
+        </div>
+      </article>
+      <article class="instructor-card">
+        <div class="instructor-photo" style="background:var(--dark-grey);" aria-label="BJJ Coach Aaron Thacker">
+          <span aria-hidden="true" style="font-size:4rem;">👤</span>
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">Aaron Thacker</h3>
+          <div class="instructor-title">BJJ Purple Belt Coach</div>
+          <p class="instructor-bio">Specialist in beginner and intermediate BJJ. UKBJJA ranked competitor.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">DO<span>BU</span></div>
+        <p>Solihull's premier martial arts training centre since 2009.</p>
+        <div class="footer-social"><a href="#" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="#" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">ig</a></div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('classes')">Classes</a></li><li><a onclick="showPage('membership')">Membership</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Disciplines</h4><ul><li><a>BJJ</a></li><li><a>Muay Thai</a></li><li><a>Judo</a></li><li><a>MMA</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>12 Station Road, Solihull</a></li><li><a>info@dobumartialarts.co.uk</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DoBu Martial Arts</p><p>Solihull, UK</p></div>
+  </footer>
+</div>
+
+<!-- ========== CLASSES PAGE ========== -->
+<div id="classes" class="page" role="main" aria-label="Classes and Timetable">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &rsaquo; <span>Classes & Timetable</span></div>
+    <span class="page-hero-label">Training Schedule</span>
+    <h1>Classes &amp; <span class="red">Timetable</span></h1>
+    <p>Week-round training across all four disciplines. Find the classes that suit your level and schedule.</p>
+  </div>
+
+  <section style="background: var(--black); padding: 80px 5%;">
+    <div class="section-header">
+      <span class="section-label">Weekly Schedule</span>
+      <h2 class="section-title">Full <span>Timetable</span></h2>
+      <p class="section-intro">All times are in GMT. Classes are subject to change during bank holidays. Check our social media for updates.</p>
+    </div>
+    <div class="timetable-wrapper" role="region" aria-label="Weekly class timetable" tabindex="0">
+      <table>
+        <caption style="text-align:left; margin-bottom:1rem; color:#666; font-size:0.8rem;">Weekly class schedule – DoBu Martial Arts, Solihull</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+            <th scope="col">Class</th>
+            <th scope="col">Instructor</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>06:30</td><td>Morning BJJ Fundamentals</td><td>Aaron Thacker</td><td>60 min</td><td><span class="badge badge-beginner">Beginner</span></td></tr>
+          <tr><td>Monday</td><td>18:00</td><td>Muay Thai Technique</td><td>Sofia Patel</td><td>75 min</td><td><span class="badge badge-intermediate">Intermediate</span></td></tr>
+          <tr><td>Monday</td><td>19:30</td><td>MMA Fundamentals</td><td>Ryan Okafor</td><td>60 min</td><td><span class="badge badge-beginner">Beginner</span></td></tr>
+          <tr><td>Tuesday</td><td>10:00</td><td>Judo – Open Mat</td><td>Marcus Webb</td><td>90 min</td><td><span class="badge badge-all">All Levels</span></td></tr>
+          <tr><td>Tuesday</td><td>17:00</td><td>Junior BJJ (Ages 8–12)</td><td>Hannah Mills</td><td>45 min</td><td><span class="badge badge-beginner">Junior</span></td></tr>
+          <tr><td>Tuesday</td><td>18:00</td><td>BJJ Advanced / Competition Prep</td><td>Damian Burke</td><td>90 min</td><td><span class="badge badge-advanced">Advanced</span></td></tr>
+          <tr><td>Wednesday</td><td>06:30</td><td>Muay Thai Conditioning</td><td>Sofia Patel</td><td>60 min</td><td><span class="badge badge-all">All Levels</span></td></tr>
+          <tr><td>Wednesday</td><td>18:00</td><td>Judo Technique Class</td><td>Marcus Webb</td><td>75 min</td><td><span class="badge badge-intermediate">Intermediate</span></td></tr>
+          <tr><td>Wednesday</td><td>19:30</td><td>MMA Sparring</td><td>Ryan Okafor</td><td>60 min</td><td><span class="badge badge-advanced">Advanced</span></td></tr>
+          <tr><td>Thursday</td><td>17:00</td><td>Junior MMA (Ages 13–16)</td><td>Hannah Mills</td><td>60 min</td><td><span class="badge badge-beginner">Junior</span></td></tr>
+          <tr><td>Thursday</td><td>18:00</td><td>BJJ No-Gi</td><td>Damian Burke</td><td>90 min</td><td><span class="badge badge-intermediate">Intermediate</span></td></tr>
+          <tr><td>Thursday</td><td>19:45</td><td>Muay Thai Sparring</td><td>Sofia Patel</td><td>60 min</td><td><span class="badge badge-advanced">Advanced</span></td></tr>
+          <tr><td>Friday</td><td>06:30</td><td>Early MMA Circuits</td><td>Ryan Okafor</td><td>45 min</td><td><span class="badge badge-all">All Levels</span></td></tr>
+          <tr><td>Friday</td><td>18:00</td><td>Judo – Randori</td><td>Marcus Webb</td><td>75 min</td><td><span class="badge badge-intermediate">Intermediate</span></td></tr>
+          <tr><td>Friday</td><td>19:30</td><td>BJJ Open Mat</td><td>Aaron Thacker</td><td>90 min</td><td><span class="badge badge-all">All Levels</span></td></tr>
+          <tr><td>Saturday</td><td>09:00</td><td>Junior Judo (Ages 5–12)</td><td>Hannah Mills</td><td>45 min</td><td><span class="badge badge-beginner">Junior</span></td></tr>
+          <tr><td>Saturday</td><td>10:00</td><td>Muay Thai – All Levels</td><td>Sofia Patel</td><td>75 min</td><td><span class="badge badge-all">All Levels</span></td></tr>
+          <tr><td>Saturday</td><td>11:30</td><td>BJJ Competition Training</td><td>Damian Burke</td><td>120 min</td><td><span class="badge badge-advanced">Advanced</span></td></tr>
+          <tr><td>Sunday</td><td>10:00</td><td>BJJ Foundations (Beginners Welcome)</td><td>Aaron Thacker</td><td>90 min</td><td><span class="badge badge-beginner">Beginner</span></td></tr>
+          <tr><td>Sunday</td><td>12:00</td><td>MMA Full Training</td><td>Ryan Okafor</td><td>90 min</td><td><span class="badge badge-intermediate">Intermediate</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box" style="margin-top:2rem;" role="note">
+      <strong>New Members:</strong> We recommend starting with any Beginner or All Levels class. No experience is necessary — our coaches will guide you through everything from day one. All students must complete an induction form before their first session.
+    </div>
+  </section>
+
+  <section class="dark-section" aria-labelledby="classes-detail-heading">
+    <span class="section-label">What to Expect</span>
+    <h2 class="section-title" id="classes-detail-heading">Class <span>Details</span></h2>
+    <div class="divider"></div>
+    <div class="disciplines-grid" style="margin-top:2.5rem;">
+      <div class="discipline-card">
+        <div class="discipline-icon" aria-hidden="true">🥋</div>
+        <h3>BJJ</h3>
+        <p>Classes begin with a warm-up, followed by technique drilling and positional sparring. Gi and No-Gi sessions available. UKBJJA affiliated.</p>
+      </div>
+      <div class="discipline-card">
+        <div class="discipline-icon" aria-hidden="true">🥊</div>
+        <h3>Muay Thai</h3>
+        <p>Bag work, pad work, clinch training and sparring available depending on level. Safety gear provided for beginners. WBC MT affiliated.</p>
+      </div>
+      <div class="discipline-card">
+        <div class="discipline-icon" aria-hidden="true">⚡</div>
+        <h3>Judo</h3>
+        <p>British Judo Association affiliated. Grading pathway available. Randori (free practice) and Kata sessions throughout the week.</p>
+      </div>
+      <div class="discipline-card">
+        <div class="discipline-icon" aria-hidden="true">🔥</div>
+        <h3>MMA</h3>
+        <p>Combines striking and grappling. Beginners focus on fundamentals. Advanced sessions include live rounds with full protective gear.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo">DO<span>BU</span></div><p>Solihull's premier martial arts training centre since 2009.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('classes')">Classes</a></li><li><a onclick="showPage('membership')">Membership</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Disciplines</h4><ul><li><a>BJJ</a></li><li><a>Muay Thai</a></li><li><a>Judo</a></li><li><a>MMA</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>12 Station Road, Solihull</a></li><li><a>info@dobumartialarts.co.uk</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DoBu Martial Arts</p><p>Solihull, UK</p></div>
+  </footer>
+</div>
+
+<!-- ========== MEMBERSHIP PAGE ========== -->
+<div id="membership" class="page" role="main" aria-label="Membership and Pricing">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &rsaquo; <span>Membership & Pricing</span></div>
+    <span class="page-hero-label">Join DoBu</span>
+    <h1>Membership &amp; <span class="red">Pricing</span></h1>
+    <p>Flexible membership options designed to fit your training goals and budget. Cancel anytime with 30 days notice.</p>
+  </div>
+
+  <section style="background: var(--black); padding: 80px 5%;">
+    <div class="section-header text-center">
+      <span class="section-label">Choose Your Plan</span>
+      <h2 class="section-title" id="membership-heading">Select a <span>Membership</span></h2>
+      <div class="divider"></div>
+      <p class="section-intro">All memberships include access to the DoBu changing facilities, free uniform for the first month and a dedicated coach introduction session.</p>
+    </div>
+
+    <div class="membership-grid" role="list" aria-label="Membership tiers">
+      <div class="mem-card" role="listitem">
+        <div class="mem-tier">Starter</div>
+        <p style="font-size:0.8rem;color:#777;">Perfect for those exploring martial arts for the first time.</p>
+        <div class="mem-price">
+          <div class="mem-price-num"><sup>£</sup>35</div>
+          <div class="mem-price-period">per month</div>
+        </div>
+        <ul class="mem-features" aria-label="Starter membership features">
+          <li>2 classes per week (any discipline)</li>
+          <li>Access to beginner sessions only</li>
+          <li>Free uniform (first month)</li>
+          <li>DoBu online training resources</li>
+          <li>No joining fee</li>
+        </ul>
+        <button class="mem-btn" onclick="showPage('contact')" aria-label="Sign up for Starter membership">Get Started</button>
+      </div>
+
+      <div class="mem-card featured" role="listitem">
+        <div class="featured-badge" aria-label="Most popular plan">Most Popular</div>
+        <div class="mem-tier">Essential</div>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.75);">Our most popular plan — unlimited classes in one discipline.</p>
+        <div class="mem-price">
+          <div class="mem-price-num"><sup>£</sup>55</div>
+          <div class="mem-price-period">per month</div>
+        </div>
+        <ul class="mem-features" aria-label="Essential membership features">
+          <li>Unlimited classes in one discipline</li>
+          <li>Access to all ability levels</li>
+          <li>Free uniform (first month)</li>
+          <li>1x monthly private coaching session</li>
+          <li>Competition squad access</li>
+          <li>DoBu online resources</li>
+        </ul>
+        <button class="mem-btn" onclick="showPage('contact')" aria-label="Sign up for Essential membership">Get Started</button>
+      </div>
+
+      <div class="mem-card" role="listitem">
+        <div class="mem-tier">Elite</div>
+        <p style="font-size:0.8rem;color:#777;">Unrestricted access for the serious martial artist.</p>
+        <div class="mem-price">
+          <div class="mem-price-num"><sup>£</sup>85</div>
+          <div class="mem-price-period">per month</div>
+        </div>
+        <ul class="mem-features" aria-label="Elite membership features">
+          <li>Unlimited access – all disciplines</li>
+          <li>All ability level classes</li>
+          <li>Free uniform (first month)</li>
+          <li>2x monthly private coaching sessions</li>
+          <li>Competition squad & fight team access</li>
+          <li>Priority class booking</li>
+          <li>Discounted seminars & events</li>
+        </ul>
+        <button class="mem-btn" onclick="showPage('contact')" aria-label="Sign up for Elite membership">Get Started</button>
+      </div>
+
+      <div class="mem-card" role="listitem">
+        <div class="mem-tier">Junior</div>
+        <p style="font-size:0.8rem;color:#777;">Designed for ages 5–16. All junior classes included.</p>
+        <div class="mem-price">
+          <div class="mem-price-num"><sup>£</sup>28</div>
+          <div class="mem-price-period">per month</div>
+        </div>
+        <ul class="mem-features" aria-label="Junior membership features">
+          <li>All junior sessions (ages 5–16)</li>
+          <li>BJJ, Judo and MMA junior classes</li>
+          <li>DBS-checked coaches</li>
+          <li>Grading pathway included</li>
+          <li>Free uniform (first month)</li>
+        </ul>
+        <button class="mem-btn" onclick="showPage('contact')" aria-label="Enquire about Junior membership">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;" role="note">
+      <strong>Family Discount:</strong> Members with two or more family members joining receive a 15% discount across all memberships. Contact us to set up a family account. All memberships are monthly rolling — no annual contracts.
+    </div>
+  </section>
+
+  <section class="dark-section" aria-labelledby="trial-heading">
+    <div style="text-align:center; max-width:640px; margin:0 auto;">
+      <span class="section-label">Not Sure Yet?</span>
+      <h2 class="section-title" id="trial-heading">Try <span>2 Weeks Free</span></h2>
+      <div class="divider" style="margin:1rem auto;"></div>
+      <p style="color:#888; margin-bottom:2rem;">New members can attend any two weeks of classes completely free of charge, across any of our disciplines. No payment details required. Just come and train.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Claim Your Free Trial</button>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo">DO<span>BU</span></div><p>Solihull's premier martial arts training centre since 2009.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('classes')">Classes</a></li><li><a onclick="showPage('membership')">Membership</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Membership</h4><ul><li><a>Starter – £35/mo</a></li><li><a>Essential – £55/mo</a></li><li><a>Elite – £85/mo</a></li><li><a>Junior – £28/mo</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>12 Station Road, Solihull</a></li><li><a>info@dobumartialarts.co.uk</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DoBu Martial Arts</p><p>Solihull, UK</p></div>
+  </footer>
+</div>
+
+<!-- ========== CONTACT PAGE ========== -->
+<div id="contact" class="page" role="main" aria-label="Contact DoBu Martial Arts">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &rsaquo; <span>Contact</span></div>
+    <span class="page-hero-label">Get in Touch</span>
+    <h1>Contact <span class="red">Us</span></h1>
+    <p>Whether you want to enquire about membership, ask about a specific class or just come in for a look around — we would love to hear from you.</p>
+  </div>
+
+  <section style="background: var(--black); padding: 80px 5%;">
+    <div class="contact-layout">
+      <div class="contact-info-block">
+        <div>
+          <span class="section-label">Find Us</span>
+          <h2 class="section-title">Get in <span>Touch</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">📍</div>
+          <div class="contact-text">
+            <h4>Address</h4>
+            <p>12 Station Road, Solihull, B91 3GH<br>West Midlands, United Kingdom</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">📞</div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <p>0121 456 7890</p>
+            <p style="font-size:0.8rem;color:#666;">Mon–Fri 09:00–20:00 | Sat–Sun 09:00–14:00</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">✉️</div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p>info@dobumartialarts.co.uk</p>
+            <p style="font-size:0.8rem;color:#666;">We aim to respond within 24 hours.</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">🕐</div>
+          <div class="contact-text">
+            <h4>Opening Hours</h4>
+            <p>Monday – Friday: 06:00 – 21:30<br>Saturday: 09:00 – 14:00<br>Sunday: 09:00 – 13:30</p>
+          </div>
+        </div>
+        <div style="margin-top:1rem;">
+          <h4 style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:1rem;">Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu Facebook page">f</a>
+            <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu Instagram page">ig</a>
+            <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu YouTube channel">yt</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="margin-bottom:2rem;">
+          <span class="section-label">Send a Message</span>
+          <h2 class="section-title">Enquiry <span>Form</span></h2>
+          <div class="divider"></div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate aria-label="Contact enquiry form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" aria-required="true" placeholder="e.g. James">
+              <span class="form-error" id="firstNameError" role="alert">Please enter your first name.</span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" aria-required="true" placeholder="e.g. Smith">
+              <span class="form-error" id="lastNameError" role="alert">Please enter your last name.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" placeholder="e.g. james@email.com">
+            <span class="form-error" id="emailError" role="alert">Please enter a valid email address.</span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 07700 900000">
+          </div>
+          <div class="form-group">
+            <label for="enquiry">Enquiry Type *</label>
+            <select id="enquiry" name="enquiry" required aria-required="true">
+              <option value="">– Select –</option>
+              <option value="membership">Membership Enquiry</option>
+              <option value="trial">Free Trial Booking</option>
+              <option value="classes">Class Information</option>
+              <option value="junior">Junior Programme</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="form-error" id="enquiryError" role="alert">Please select an enquiry type.</span>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" required aria-required="true" placeholder="Tell us a bit about yourself and what you are looking for..."></textarea>
+            <span class="form-error" id="messageError" role="alert">Please enter your message.</span>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Enquiry</button>
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+            Thank you for your message. A member of the DoBu team will be in touch within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo">DO<span>BU</span></div><p>Solihull's premier martial arts training centre since 2009.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('classes')">Classes</a></li><li><a onclick="showPage('membership')">Membership</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Disciplines</h4><ul><li><a>BJJ</a></li><li><a>Muay Thai</a></li><li><a>Judo</a></li><li><a>MMA</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>12 Station Road, Solihull</a></li><li><a>info@dobumartialarts.co.uk</a></li><li><a>0121 456 7890</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DoBu Martial Arts</p><p>Solihull, UK</p></div>
+  </footer>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== PAGE NAVIGATION =====
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('onclick') && a.getAttribute('onclick').includes("'"+id+"'")) {
+        a.classList.add('active');
+      }
+    });
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.remove('open');
+    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+  }
+
+  // ===== HAMBURGER MENU =====
+  function toggleNav() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen.toString());
+  }
+
+  // Close nav on click outside
+  document.addEventListener('click', function(e) {
+    const nav = document.querySelector('nav');
+    const navLinks = document.getElementById('navLinks');
+    if (!nav.contains(e.target) && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ===== FORM VALIDATION =====
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    function validate(id, errorId, condition) {
+      const error = document.getElementById(errorId);
+      if (condition) {
+        error.style.display = 'block';
+        valid = false;
+      } else {
+        error.style.display = 'none';
+      }
+    }
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const enquiry = document.getElementById('enquiry').value;
+    const message = document.getElementById('message').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    validate('firstName', 'firstNameError', firstName === '');
+    validate('lastName', 'lastNameError', lastName === '');
+    validate('email', 'emailError', !emailRegex.test(email));
+    validate('enquiry', 'enquiryError', enquiry === '');
+    validate('message', 'messageError', message === '');
+
+    if (valid) {
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset();
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 6000);
+    }
+  });
+
+  // Clear errors on input
+  ['firstName','lastName','email','enquiry','message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() {
+        const err = document.getElementById(id + 'Error');
+        if (err) err.style.display = 'none';
+      });
+    }
+  });
+</script>
+</body>
+</html>
