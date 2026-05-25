@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact DoBu Martial Arts – enquire about membership, classes or book your free two-week trial.">
+  <title>Contact – DoBu Martial Arts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">DO<span>BU</span></div>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li><a href="index.html" role="menuitem">Home</a></li>
+      <li><a href="about.html" role="menuitem">About</a></li>
+      <li><a href="classes.html" role="menuitem">Classes</a></li>
+      <li><a href="membership.html" role="menuitem">Membership</a></li>
+      <li><a href="contact.html" class="active nav-cta" role="menuitem">Join Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main role="main">
+    <div class="page-hero">
+      <div class="breadcrumb">Home &rsaquo; <span>Contact</span></div>
+      <span class="page-hero-label">Get in Touch</span>
+      <h1>Contact <span class="red">Us</span></h1>
+      <p>Whether you want to enquire about membership, ask about a specific class or just come in for a look around — we would love to hear from you.</p>
+    </div>
+
+    <section style="background: var(--black); padding: 80px 5%;">
+      <div class="contact-layout">
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info-block">
+          <div>
+            <span class="section-label">Find Us</span>
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <div class="divider"></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">📍</div>
+            <div class="contact-text">
+              <h4>Address</h4>
+              <p>12 Station Road, Solihull, B91 3GH<br>West Midlands, United Kingdom</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">📞</div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <p><a href="tel:01214567890">0121 456 7890</a></p>
+              <p style="font-size:0.8rem;color:#444;">Mon–Fri 09:00–20:00 &nbsp;|&nbsp; Sat–Sun 09:00–14:00</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">✉️</div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p><a href="mailto:info@dobumartialarts.co.uk">info@dobumartialarts.co.uk</a></p>
+              <p style="font-size:0.8rem;color:#444;">We aim to respond within 24 hours.</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">🕐</div>
+            <div class="contact-text">
+              <h4>Opening Hours</h4>
+              <p>Monday – Friday: 06:00 – 21:30<br>Saturday: 09:00 – 14:00<br>Sunday: 09:00 – 13:30</p>
+            </div>
+          </div>
+          <div>
+            <h4 style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:1rem;">Follow Us</h4>
+            <div class="footer-social">
+              <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu Facebook">f</a>
+              <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu Instagram">ig</a>
+              <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="DoBu YouTube">yt</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div>
+          <div style="margin-bottom:2rem;">
+            <span class="section-label">Send a Message</span>
+            <h2 class="section-title">Enquiry <span>Form</span></h2>
+            <div class="divider"></div>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate aria-label="Contact enquiry form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" aria-required="true" placeholder="e.g. James">
+                <span class="form-error" id="firstNameError" role="alert">Please enter your first name.</span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" aria-required="true" placeholder="e.g. Smith">
+                <span class="form-error" id="lastNameError" role="alert">Please enter your last name.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" placeholder="e.g. james@email.com">
+              <span class="form-error" id="emailError" role="alert">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 07700 900000">
+            </div>
+            <div class="form-group">
+              <label for="enquiry">Enquiry Type *</label>
+              <select id="enquiry" name="enquiry" required aria-required="true">
+                <option value="">– Select –</option>
+                <option value="membership">Membership Enquiry</option>
+                <option value="trial">Free Trial Booking</option>
+                <option value="classes">Class Information</option>
+                <option value="junior">Junior Programme</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" id="enquiryError" role="alert">Please select an enquiry type.</span>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" required aria-required="true" placeholder="Tell us a bit about yourself and what you are looking for..."></textarea>
+              <span class="form-error" id="messageError" role="alert">Please enter your message.</span>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;">Send Enquiry</button>
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+              Thank you for your message. A member of the DoBu team will be in touch within 24 hours.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">DO<span>BU</span></div>
+        <p>Solihull's premier martial arts training centre since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+        <li><a href="classes.html">Classes</a></li><li><a href="membership.html">Membership</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Disciplines</h4><ul>
+        <li><a href="classes.html">BJJ</a></li><li><a href="classes.html">Muay Thai</a></li>
+        <li><a href="classes.html">Judo</a></li><li><a href="classes.html">MMA</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a>12 Station Road, Solihull</a></li>
+        <li><a href="mailto:info@dobumartialarts.co.uk">info@dobumartialarts.co.uk</a></li>
+        <li><a href="tel:01214567890">0121 456 7890</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DoBu Martial Arts. All rights reserved.</p><p>Solihull, UK</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

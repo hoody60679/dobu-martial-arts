@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DoBu Martial Arts – Professional martial arts training in Solihull. BJJ, Muay Thai, Judo and MMA for all ages and abilities.">
+  <title>DoBu Martial Arts – Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">DO<span>BU</span></div>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li><a href="index.html" class="active" role="menuitem">Home</a></li>
+      <li><a href="about.html" role="menuitem">About</a></li>
+      <li><a href="classes.html" role="menuitem">Classes</a></li>
+      <li><a href="membership.html" role="menuitem">Membership</a></li>
+      <li><a href="contact.html" class="nav-cta" role="menuitem">Join Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <main id="home-page" role="main">
+    <section class="hero" aria-label="Hero banner">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-diagonal" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-tag">Solihull's Premier Martial Arts Club</div>
+        <h1>Train.<em>Discipline.</em>Evolve.</h1>
+        <p class="hero-sub">Professional instruction in Brazilian Jiu-Jitsu, Muay Thai, Judo and MMA. All ages. All abilities. One community.</p>
+        <div class="hero-btns">
+          <a href="membership.html" class="btn-primary">Start Your Journey</a>
+          <a href="classes.html" class="btn-outline">View Classes</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">500+</div><div class="stat-label">Active Members</div></div>
+          <div><div class="stat-num">15+</div><div class="stat-label">Years Training</div></div>
+          <div><div class="stat-num">6</div><div class="stat-label">Expert Instructors</div></div>
+          <div><div class="stat-num">4</div><div class="stat-label">Disciplines</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCIPLINES -->
+    <section style="padding: 80px 5%; background: var(--black);" aria-labelledby="disciplines-heading">
+      <div class="section-header">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title" id="disciplines-heading">Our <span>Disciplines</span></h2>
+        <p class="section-intro">From beginner-friendly introductions to elite competition training — we have a class for every level.</p>
+      </div>
+      <div class="disciplines-grid">
+        <a href="classes.html" class="discipline-card" aria-label="Brazilian Jiu-Jitsu classes">
+          <div class="discipline-icon" aria-hidden="true">🥋</div>
+          <h3>Brazilian Jiu-Jitsu</h3>
+          <p>Ground-based grappling and submission art. Develop technique, leverage and strategic thinking on the mat.</p>
+        </a>
+        <a href="classes.html" class="discipline-card" aria-label="Muay Thai classes">
+          <div class="discipline-icon" aria-hidden="true">🥊</div>
+          <h3>Muay Thai</h3>
+          <p>The art of eight limbs. Striking, clinch work and powerful kicks developed under expert coaches.</p>
+        </a>
+        <a href="classes.html" class="discipline-card" aria-label="Judo classes">
+          <div class="discipline-icon" aria-hidden="true">⚡</div>
+          <h3>Judo</h3>
+          <p>Olympic throwing and grappling art. Build explosive power, timing and competitive discipline.</p>
+        </a>
+        <a href="classes.html" class="discipline-card" aria-label="MMA classes">
+          <div class="discipline-icon" aria-hidden="true">🔥</div>
+          <h3>Mixed Martial Arts</h3>
+          <p>Combine striking and grappling into a complete fighting system. Fundamentals to cage-ready conditioning.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip" role="complementary" aria-label="Free trial offer">
+      <h2>READY TO BEGIN?</h2>
+      <p>Your first two weeks are free. No contracts. No pressure. Just training.</p>
+      <a href="contact.html" class="btn-outline">Claim Your Free Trial</a>
+    </div>
+
+    <!-- INSTRUCTORS PREVIEW -->
+    <section style="background: var(--charcoal); padding: 80px 5%;" aria-labelledby="instructors-heading">
+      <div class="section-header">
+        <span class="section-label">The Team</span>
+        <h2 class="section-title" id="instructors-heading">Meet Your <span>Coaches</span></h2>
+        <p class="section-intro">Our instructors bring decades of competitive and coaching experience across the world's top martial arts disciplines.</p>
+      </div>
+      <div class="instructors-grid">
+        <article class="instructor-card">
+          <div class="instructor-photo" aria-label="Head Coach Damian Burke"><span aria-hidden="true">👤</span></div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Damian Burke</h3>
+            <div class="instructor-title">Head Coach & Founder – BJJ & MMA</div>
+            <p class="instructor-bio">3rd Degree BJJ Black Belt. IBJJF medalist. 20+ years experience. Founded DoBu in 2009.</p>
+            <div class="instructor-belts" aria-label="Belt rank">
+              <div class="belt" style="background:#111;" title="Black Belt"></div>
+              <div class="belt" style="background:#333;" title="Stripe"></div>
+              <div class="belt" style="background:#333;" title="Stripe"></div>
+              <div class="belt" style="background:#333;" title="Stripe"></div>
+            </div>
+          </div>
+        </article>
+        <article class="instructor-card">
+          <div class="instructor-photo" aria-label="Muay Thai Coach Sofia Patel"><span aria-hidden="true">👤</span></div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Sofia Patel</h3>
+            <div class="instructor-title">Head Muay Thai Coach</div>
+            <p class="instructor-bio">3x WBC Muay Thai UK Champion. Trained in Chiang Mai, Thailand under Kru Chatchai.</p>
+            <div class="instructor-belts" aria-label="Rank indicators">
+              <div class="belt" style="background:#555;" title="Gold rank"></div>
+              <div class="belt" style="background:#555;" title="Gold rank"></div>
+              <div class="belt" style="background:#555;" title="Gold rank"></div>
+            </div>
+          </div>
+        </article>
+        <article class="instructor-card">
+          <div class="instructor-photo" aria-label="Judo Coach Marcus Webb"><span aria-hidden="true">👤</span></div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Marcus Webb</h3>
+            <div class="instructor-title">Head Judo Coach – 3rd Dan</div>
+            <p class="instructor-bio">British Judo Association Level 3 Coach. Former British Universities Judo Champion.</p>
+            <div class="instructor-belts" aria-label="Belt rank">
+              <div class="belt" style="background:#111;"></div>
+              <div class="belt" style="background:#111;"></div>
+              <div class="belt" style="background:#111;"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top: 3rem;">
+        <a href="about.html" class="btn-outline">Meet the Full Team</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">DO<span>BU</span></div>
+        <p>Solihull's premier martial arts training centre. Professional coaching in BJJ, Muay Thai, Judo and MMA for all ages since 2009.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+          <a href="#" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">yt</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Classes</h4><ul>
+        <li><a href="classes.html">Brazilian Jiu-Jitsu</a></li>
+        <li><a href="classes.html">Muay Thai</a></li>
+        <li><a href="classes.html">Judo</a></li>
+        <li><a href="classes.html">MMA</a></li>
+        <li><a href="classes.html">Juniors</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a>12 Station Road, Solihull B91 3GH</a></li>
+        <li><a href="mailto:info@dobumartialarts.co.uk">info@dobumartialarts.co.uk</a></li>
+        <li><a href="tel:01214567890">0121 456 7890</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DoBu Martial Arts. All rights reserved.</p>
+      <p>Solihull, West Midlands, UK</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
